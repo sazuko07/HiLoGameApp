@@ -6,6 +6,8 @@ public class HiLo2 {
     int userguess = 0;
     int userchoice = 0;
     int RemainingGuesses = 5;
+    int NewRemainingGuesses = 5;
+     
     
     // greet the player
     System.out.println("Hello! Would you like to play HiLo?");
@@ -24,7 +26,8 @@ public class HiLo2 {
 	  if (userchoice == 1) {
 	         System.out.println("Great! let's play!");
 	         System.out.println("Here are the rules: you have 5 chances to guess which number the computer"
-	                + "chose between 1 and 20. The game will tell you if your guess is High or Low. Good luck!");
+	                + "chose between 1 and 20. The game will tell you if your guess is High or Low. Subsequent"
+	                + "games will give you only 3 guesses. Good luck!");
 	         System.out.println("User guesses left: 5");
 	         System.out.println("User, choose your number: ");
 	         userguess = keyboard.nextInt();
@@ -47,7 +50,9 @@ public class HiLo2 {
 	        		 }
 	        		 System.out.println("Please choose your next guess: ");
 	        		 userguess = keyboard.nextInt();
-	        		 computerchoice = rand.nextInt(20);
+	        		 computerchoice = rand.nextInt(20); 
+	        		 RemainingGuesses = NewCalcdRemainingGuesses(NewRemainingGuesses);
+	        		 
        
     }  
    
@@ -92,5 +97,20 @@ public class HiLo2 {
    					System.exit(0);
    				}
    				return RG;
+   			}
+   				
+   	   			public static int NewCalcdRemainingGuesses(int NewRemainingGuesses) {
+   	   				int RemainingGuesses = 5;
+   	   				int NRG = NewRemainingGuesses -1;
+   	   				RemainingGuesses = NewRemainingGuesses; 
+   	   				if (RemainingGuesses == 1) {
+   	   					System.out.println("Oops! you've run out of guesses! better luck next time!");
+   	   					System.out.println("If you wish to play again, please restart program!");
+   	   					System.out.println("Thank you for playing. See you next time!");
+   	   					System.exit(0);
+   	   				}
+   	   				return NRG;
+   	   				 
 	}//end method
    }//end class
+
