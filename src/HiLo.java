@@ -1,4 +1,4 @@
-public class HiLo2 {
+public class HiLo {
   public static void main(String[] args) {
     java.util.Scanner keyboard = new java.util.Scanner(System.in);
     java.util.Random rand = new java.util.Random();
